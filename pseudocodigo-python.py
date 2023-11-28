@@ -1,4 +1,5 @@
-função menu():
+def menu(): #Lari Aráujo
+    """Função principal de menu que irá chamar as outras funções do código, variaveis para armazenar funções"""
 	dados = função_cadastro()
     opção1 = perguntas_iniciais()
         se saude_mental < 3
@@ -17,33 +18,50 @@ função menu():
 
     print finalizar
         input sim ou não
+    pass
 
 
 
-função função_cadastro:
+def função_cadastro(): #Lari Araújo
+    """Função responsavel por procurar se o usuário já esta cadastrado ou não no aplicativo, se cadastrado segue para as perguntas,
+        se não, necessário fazer o cadastro"""
 	input cpf
 		se cpf está em {cadastro}
 			retorna lista_usuario
 		se não
             input dados 
 			return lista_usuario
+    pass
 
-função perguntas_iniciais():
+
+def perguntas_iniciais():#Lari Araújo
+    """Função responsavel por fazer as perguntas de check-in e retornar uma lista que armazena as respostas"""
 	input saude_mental
     input saude_fisica
     retorna lista_saudefisicamental #as informações das perguntas iniciais devem estar associadas ao repectivo usuário que respondeu
-        
+    pass    
 
-função avaliação_saudemental():
+
+def avaliacao_saudemental():#Luna
+    """Função responsavel por fazer perguntas voltadas a saúde mental e se necessário retorna a função de recomendar especialista"""
         input 
+    pass
 
-função avaliação_saudefísica():
 
-função mediadassaudes():
+def avaliacao_saudefisica():#Luna
+    """Função responsavel por fazer perguntas voltadas a saúde mental e se necessário retorna a função de recomendar especialista"""
+    pass
 
-função calculo_imc():
 
-função recomendar_especialista():
+def mediadassaudes():#Lari Lopes
+    """Função armazena os conteúdos da avaliação da saúde mental e saúde fisica, calcula uma média entre os dois e printa
+     o resultado com uma mensagem"""
+    pass
+
+
+def recomendar_especialista():#Lari Lopes
+    """A Função recomenda um especialista a partir do resultado das avaliações de saúde mental e física (separadas), """
+    pass
 
 
 
