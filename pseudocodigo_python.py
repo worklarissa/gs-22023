@@ -1,6 +1,5 @@
 import sys
-dados_pacientes = {}
-
+lista_usuarios = {}
 
 def função_cadastro(): #Lari Araújo
      """Função responsavel por procurar se o usuário já esta cadastrado ou não no aplicativo, se cadastrado segue para as perguntas,
@@ -12,34 +11,26 @@ def função_cadastro(): #Lari Araújo
           cadastro["nome"] = input("Informe seu nome: \n")
           cadastro["email"] = input("Agora, digite seu email: \n")
           cadastro["telefone"] = input("Informe o telefone para contato: \n")
+          criar_novo_cadastro(cadastro)
           return cadastro
      else:
-          return dados_pacientes[cadastro["cpf"]]
-        
-	#input cpf
-		#se cpf está em {cadastro}
-			#retorna lista_usuario
-		#se não
-            #input dados 
-		#lista_usuario
-
+          return lista_usuarios[cadastro["cpf"]]
+ 
 def continuar_cadastro(cadastro):
-     if cadastro["cpf"] in dados_pacientes:
+     if cadastro["cpf"] in lista_usuarios:
           edit = input("Você já está cadastrado. \n Digite 1 para editar o cadastro ou 2 para prosseguir.\n")
           return (edit == "1")
      return True
 
-def criar_novo_cadastro(dados):
-     dados_pacientes[dados["cpf"]] = dados
+def criar_novo_cadastro(cadastro):
+     lista_usuarios[cadastro["cpf"]] = cadastro
 
 def perguntas_iniciais():#Lari Araújo
     """Função responsavel por fazer as perguntas de check-in e retornar uma lista que armazena as respostas"""
 	#input saude_mental
     #input saude_fisica
     #retorna lista_saudefisicamental #as informações das perguntas iniciais devem estar associadas ao repectivo usuário que respondeu
-
     pass    
-
 
 def avaliacao_saudemental():#Luna
     """Função responsavel por fazer perguntas voltadas a saúde mental e se necessário retorna a função de recomendar especialista"""

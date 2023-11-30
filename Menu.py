@@ -6,7 +6,6 @@ def menu(): #Lari Aráujo
       print("\nOlá, Bem vindo ao FelizIdade!")
       dados = função_cadastro()
       print(f"Os dados de seu cadastro são: {dados}")
-      criar_novo_cadastro(dados)
       #opção1 = perguntas_iniciais()
       #    se saude_mental < 3
       #        opção2 = avaliação_saudemental()
