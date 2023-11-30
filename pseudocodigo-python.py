@@ -29,22 +29,22 @@ def menu(): #Lari Aráujo
 def função_cadastro(): #Lari Araújo    
     """Função responsavel por procurar se o usuário já esta cadastrado ou não no aplicativo, se cadastrado segue para as perguntas,
         se não, necessário fazer o cadastro"""
-    print("\n_Primeiro faremos seu cadastro!\n")
-    contato = {}
-    contato["nome"] = input("Por favor, digite seu nome: \n")  
+    print("\n_Primeiro iremos verificar seu cadastro!\n")
+    cadastro = {}
+    cadastro["nome"] = input("Por favor, digite seu nome: \n")  
     if continuar_cadastro(contato) == True:  
-    contato["email"] = input("Informe seu e-mail corporativo: \n")
-    contato["cargo"] = input("Agora, digite seu cargo: \n")
-    contato["empresa"] = input("Informe o nome da empresa: \n")
-    contato["telefone"] = input("Informe o telefone para contato: \n")
-    contato["num_funcionarios"] = ""  
-    while (contato["num_funcionarios"] not in ["1","2","3","4","5","6"]):
-        contato["num_funcionarios"] = input("Informe a quantidade de funcionários: \n 1 - de 1 a 50 funcionários.\n 2 - de 51 a 300 funcionários.\n 3 - de 301 a 1000 funcionários.\n 4 - de 1001 a 2000 funcionários. \n 5 - acima de 2001 funcionários. \n 0 - Encerrar aplicação\n")
-        if contato["num_funcionarios"] == "0":
-            encerrar()
-    return contato
+        cadastro["email"] = input("Informe seu e-mail corporativo: \n")
+        cadastro["cargo"] = input("Agora, digite seu cargo: \n")
+        cadastro["empresa"] = input("Informe o nome da empresa: \n")
+        cadastro["telefone"] = input("Informe o telefone para contato: \n")
+        cadastro["num_funcionarios"] = ""  
+        while (cadastro["num_funcionarios"] not in ["1","2","3","4","5","6"]):
+            cadastro["num_funcionarios"] = input("Informe a quantidade de funcionários: \n 1 - de 1 a 50 funcionários.\n 2 - de 51 a 300 funcionários.\n 3 - de 301 a 1000 funcionários.\n 4 - de 1001 a 2000 funcionários. \n 5 - acima de 2001 funcionários. \n 0 - Encerrar aplicação\n")
+            if cadastro["num_funcionarios"] == "0":
+                encerrar()
+        return cadastro
     else: 
-    return agenda[contato["nome"]]
+    return dados_pacientes[cadastro["nome"]]
         
 	#input cpf
 		#se cpf está em {cadastro}
@@ -52,9 +52,9 @@ def função_cadastro(): #Lari Araújo
 		#se não
             #input dados 
 		#lista_usuario
-    pass
+
 def continuar_cadastro(contato):
-  if contato["nome"] in dados_pacientes:
+  if cadastro["nome"] in dados_pacientes:
     edit = input("Encontramos seu cadastro. \n Digite 1 para editá-lo ou 2 para prosseguir.\n")
     return (edit == "1")
   return True
