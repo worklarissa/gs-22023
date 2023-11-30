@@ -2,19 +2,19 @@ import sys
 dados_pacientes = {}
 
 
-def função_cadastro(): #Lari Araújo    
-    """Função responsavel por procurar se o usuário já esta cadastrado ou não no aplicativo, se cadastrado segue para as perguntas,
+def função_cadastro(): #Lari Araújo
+     """Função responsavel por procurar se o usuário já esta cadastrado ou não no aplicativo, se cadastrado segue para as perguntas,
         se não, necessário fazer o cadastro"""
-    print("\n_Primeiro iremos verificar seu cadastro!\n")
-    cadastro = {}
-    cadastro["cpf"] = input("Por favor, digite seu CPF: \n")  
-    if continuar_cadastro(cadastro) == True:  
-        cadastro["nome"] = input("Informe seu nome: \n")
-        cadastro["email"] = input("Agora, digite seu email: \n")
-        cadastro["telefone"] = input("Informe o telefone para contato: \n")
-        return cadastro
-    else: 
-     return dados_pacientes[cadastro["cpf"]]
+     print("\n_Primeiro iremos verificar seu cadastro!\n")
+     cadastro = {}
+     cadastro["cpf"] = input("Por favor, digite seu CPF: \n")  
+     if continuar_cadastro(cadastro) == True:
+          cadastro["nome"] = input("Informe seu nome: \n")
+          cadastro["email"] = input("Agora, digite seu email: \n")
+          cadastro["telefone"] = input("Informe o telefone para contato: \n")
+          return cadastro
+     else:
+          return dados_pacientes[cadastro["cpf"]]
         
 	#input cpf
 		#se cpf está em {cadastro}
@@ -24,10 +24,13 @@ def função_cadastro(): #Lari Araújo
 		#lista_usuario
 
 def continuar_cadastro(cadastro):
-  if cadastro["cpf"] in dados_pacientes:
-    edit = input("Encontramos seu cadastro. \n Digite 1 para editá-lo ou 2 para prosseguir.\n")
-    return (edit == "1")
-  return True
+     if cadastro["cpf"] in dados_pacientes:
+          edit = input("Você já está cadastrado. \n Digite 1 para editar o cadastro ou 2 para prosseguir.\n")
+          return (edit == "1")
+     return True
+
+def criar_novo_cadastro(dados):
+     dados_pacientes[dados["cpf"]] = dados
 
 def perguntas_iniciais():#Lari Araújo
     """Função responsavel por fazer as perguntas de check-in e retornar uma lista que armazena as respostas"""
