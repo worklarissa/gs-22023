@@ -25,12 +25,21 @@ def continuar_cadastro(cadastro):
 def criar_novo_cadastro(cadastro):
      lista_usuarios[cadastro["cpf"]] = cadastro
 
-def perguntas_iniciais():#Lari Araújo
-    """Função responsavel por fazer as perguntas de check-in e retornar uma lista que armazena as respostas"""
-	#input saude_mental
-    #input saude_fisica
-    #retorna lista_saudefisicamental #as informações das perguntas iniciais devem estar associadas ao repectivo usuário que respondeu
-    pass    
+def perguntas_iniciais(dados):#Lari Araújo
+     """Função responsavel por fazer as perguntas de check-in e retornar uma lista que armazena as respostas"""
+     print("\nPor favor, responda algumas perguntas para avaliarmos seu estado de saude.\n")
+
+     per1 = int(input("De 0 a 5, sendo 0 muito baixo e 5 muito alto, como está sua saúde mental ultimamente? "))
+     while per1 not in range(0,6):
+          per1 = int(input("\nPor favor, dê uma nota de 0 a 5.\nComo está sua saúde mental ultimamente? "))
+     if per1 <= 3:
+          avaliacao_saudemental(dados["cpf"])
+
+     per2 = int(input("De 0 a 5, sendo 0 muito baixo e 5 muito alto, como está sua saúde física ultimamente? "))
+     while per2 not in range(0,6):
+          per2 = int(input("Por favor, dê uma nota de 0 a 5.\nComo está sua saúde física ultimamente? "))
+     if per2 <= 3:
+          avaliacao_saudefisica()
 
 def avaliacao_saudemental():#Luna
     """Função responsavel por fazer perguntas voltadas a saúde mental e se necessário retorna a função de recomendar especialista"""
@@ -78,6 +87,7 @@ def avaliacao_saudefisica():#Luna
     return
 
 
+
 def mediadassaudes():#Lari Lopes
     """Função armazena os conteúdos da avaliação da saúde mental e saúde fisica, calcula uma média entre os dois e printa
      o resultado com uma mensagem"""
@@ -86,7 +96,7 @@ def mediadassaudes():#Lari Lopes
 
 def recomendar_especialista():#Lari Lopes
     """A Função recomenda um especialista a partir do resultado das avaliações de saúde mental e física (separadas), """
-    pass
+    print("batata")
 
 
 
