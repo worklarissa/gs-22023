@@ -67,7 +67,7 @@ def avaliacao_saudemental(cpf):#Luna
      print(lista_usuarios)
 
      if (int(per1) >= 3) and (per2.lower() == "sim"):
-          return recomendar_especialista
+          return recomendar_especialista(abs(int(per1) - 5),5)
      else:
           return "Muito obrigada por preencher a avaliação de saúde mental!"
 
@@ -97,7 +97,7 @@ def avaliacao_saudefisica(cpf):#Luna
           per4 = input("Por favor, digite 'sim' ou 'não'")
      
      if (per1.lower() == "sim") and (per3.lower() == "sim"):
-          return recomendar_especialista()
+          return recomendar_especialista(5,abs(int(per2) - 5))
      else:
           return "Muito obrigada por preencher a avaliação de saúde física!"
 
