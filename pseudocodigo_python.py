@@ -11,7 +11,8 @@ def função_cadastro(): #Lari Araújo
           cadastro["nome"] = input("Informe seu nome: \n")
           cadastro["email"] = input("Agora, digite seu email: \n")
           cadastro["telefone"] = input("Informe o telefone para contato: \n")
-          cadastro["respostas"] = []
+          cadastro["respostas_fisica"] = []
+          cadastro["respostas_mental"] = []
           criar_novo_cadastro(cadastro)
           print(lista_usuarios)
      return lista_usuarios[cadastro["cpf"]]
@@ -30,19 +31,20 @@ def perguntas_iniciais(cpf):#Lari Araújo
      """Função responsavel por fazer as perguntas de check-in e retornar uma lista que armazena as respostas"""
      print("\nPor favor, responda algumas perguntas para avaliarmos seu estado de saude.\n")
 
-     per1 = int(input("De 0 a 5, sendo 0 muito baixo e 5 muito alto, como está sua saúde mental ultimamente? "))
+     per1 = int(input("De 0 a 5, sendo 0 muito ruim e 5 muito boa, como está sua saúde mental ultimamente? "))
      while per1 not in range(0,6):
           per1 = int(input("\nPor favor, dê uma nota de 0 a 5.\nComo está sua saúde mental ultimamente? "))
      if per1 <= 3:
           avaliacao_saudemental(cpf)
 
-     per2 = int(input("De 0 a 5, sendo 0 muito baixo e 5 muito alto, como está sua saúde física ultimamente? "))
+     per2 = int(input("De 0 a 5, sendo 0 muito ruim e 5 muito boa, como está sua saúde física ultimamente? "))
      while per2 not in range(0,6):
           per2 = int(input("Por favor, dê uma nota de 0 a 5.\nComo está sua saúde física ultimamente? "))
      if per2 <= 3:
           avaliacao_saudefisica(cpf)
-     lista_usuarios[cpf]["respostas"].extend([per1,per2])
-     #lista_usuarios[cpf]["respostas"].append(per2)
+
+     lista_usuarios[cpf]["respostas_mental"].append([per1])
+     lista_usuarios[cpf]["respostas_fisica"].append([per2])
      print(lista_usuarios)
 
 
@@ -50,7 +52,6 @@ def avaliacao_saudemental(cpf):#Luna
      """Função responsavel por fazer perguntas voltadas a saúde mental e se necessário retorna a função de recomendar especialista"""
 
      per1 = input("Em um nível de 0 a 5, sendo 0 muito baixo e 5 muito alto, como está seu nível de estresse ultimamente?")
-     # per1.append(LISTA DE SAUDE MENTAL)
      while per1 not in ["0","1","2","3","4","5"]:
           per1 = input("Por favor, dê uma nota de 0 a 5")
 
@@ -62,7 +63,7 @@ def avaliacao_saudemental(cpf):#Luna
      while per3.lower() not in ["sim","não","nao"]:
           per3 = input("Por favor, responda 'sim' ou 'não'")
      
-     lista_usuarios[cpf]["respostas"].append(int(per1))
+     lista_usuarios[cpf]["respostas_mental"].append(abs(int(per1) - 5))
      print(lista_usuarios)
 
      if (int(per1) >= 3) and (per2.lower() == "sim"):
@@ -84,7 +85,7 @@ def avaliacao_saudefisica(cpf):#Luna
           while per2 not in ["0","1","2","3","4","5"]:
                per2 = input("Por favor, dê uma nota de 0 a 5")
           
-          lista_usuarios[cpf]["respostas"].append(per2)
+          lista_usuarios[cpf]["respostas_fisica"].append(abs(int(per2) - 5))
           print(lista_usuarios)
           
           per3 = input("Baseado nessa resposta, tem mais de uma semana que você está se sentindo assim? Responda 'sim' ou 'não'")
@@ -100,11 +101,11 @@ def avaliacao_saudefisica(cpf):#Luna
      else:
           return "Muito obrigada por preencher a avaliação de saúde física!"
 
-def mediadassaudes():#Lari Lopes
+def mediadassaudes(cpf):#Lari Lopes
     """Função armazena os conteúdos da avaliação da saúde mental e saúde fisica, calcula uma média entre os dois e printa
      o resultado com uma mensagem"""
-    pass
 
+    pass
 
 def recomendar_especialista():#Lari Lopes
     """A Função recomenda um especialista a partir do resultado das avaliações de saúde mental e física (separadas), """

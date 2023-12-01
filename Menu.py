@@ -9,17 +9,6 @@ def menu(): #Lari Aráujo
       perguntas_iniciais(dados["cpf"])
       mediadassaudes(dados["cpf"])
       
-      #opção1 = perguntas_iniciais()
-      #    se saude_mental < 3
-      #        opção2 = avaliação_saudemental()
-      #        retorna input saude_fisica4154
-      #    se não 
-      #        usuário escolhe responder
-      #        retorna input_fisica
-      #    se saude_fisica < 3
-      #        opção3 = avaliação_saudefisica
-      #    se não 
-      #        usuário escolhe respoder 
       #media = mediadassaudes()
       #imc = calculo_imc()
       #recomendação = recomendar_especialista()
