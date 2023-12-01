@@ -9,12 +9,12 @@ def menu(): #Lari Aráujo
       perguntas_iniciais(dados["cpf"])
       mediadassaudes(dados["cpf"])
       
-      #media = mediadassaudes()
-      #imc = calculo_imc()
-      #recomendação = recomendar_especialista()
+      (media_mental, media_fisica) = mediadassaudes(dados["cpf"])
+      print(f"\n{dados['nome']}, aqui está o relatório do seu estado de saúde baseado nas suas últimas respostas:")
+      print(f"Média da saúde mental: {media_mental}")
+      print(f"Média da saúde física: {media_fisica}")
 
-      #print finalizar
-      #    input sim ou não
+      recomendar_especialista(media_mental, media_fisica)
 
 if __name__ == "__main__":
   menu()
