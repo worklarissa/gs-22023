@@ -111,10 +111,10 @@ def mediadassaudes():#Lari Lopes
 
 
 def recomendar_especialista():#Lari Lopes
-    """A Função recomenda um especialista a partir do resultado das avaliações de saúde mental e física (separadas), """
-    if media_mental < 3:
+     """A Função recomenda um especialista a partir do resultado das avaliações de saúde mental e física (separadas), """
+     if media_mental < 3:
           print("\nNotamos que suas respostas relacionadas à saúde mental estão um pouco baixas. \nRecomendamos que procure um especialista da área, como um psicologo ou psiquiatra.")
-if media_fisica < 3:
+     if media_fisica < 3:
           print("\nNotamos que suas respostas relacionadas à saúde física estão um pouco baixas. \nRecomendamos que procure um especialista da área, como um clínico geral.")
 
 
