@@ -67,7 +67,7 @@ def avaliacao_saudemental(cpf):#Luna
      print(lista_usuarios)
 
      if (int(per1) >= 3) and (per2.lower() == "sim"):
-          return recomendar_especialista
+          return recomendar_especialista(abs(int(per1) - 5),5)
      else:
           return "Muito obrigada por preencher a avaliação de saúde mental!"
 
@@ -97,19 +97,25 @@ def avaliacao_saudefisica(cpf):#Luna
           per4 = input("Por favor, digite 'sim' ou 'não'")
      
      if (per1.lower() == "sim") and (per3.lower() == "sim"):
-          return recomendar_especialista()
+          return recomendar_especialista(5,abs(int(per2) - 5))
      else:
           return "Muito obrigada por preencher a avaliação de saúde física!"
 
 def mediadassaudes():#Lari Lopes     
-    """Função armazena os conteúdos da avaliação da saúde mental e saúde fisica, calcula uma média entre os dois e printa
+     """Função armazena os conteúdos da avaliação da saúde mental e saúde fisica, calcula uma média entre os dois e printa
      o resultado com uma mensagem"""
-    pass
+     media_fisica = sum(lista_usuarios[cpf]["respostas_fisica"])/len(lista_usuarios[cpf]["respostas_fisica"])
+     media_mental = sum(lista_usuarios[cpf]["respostas_mental"])/len(lista_usuarios[cpf]["respostas_mental"])
+     return(media_mental, media_fisica)
+
 
 
 def recomendar_especialista():#Lari Lopes
-    """A Função recomenda um especialista a partir do resultado das avaliações de saúde mental e física (separadas), """
-    print("batata")
+     """A Função recomenda um especialista a partir do resultado das avaliações de saúde mental e física (separadas), """
+     if media_mental < 3:
+          print("\nNotamos que suas respostas relacionadas à saúde mental estão um pouco baixas. \nRecomendamos que procure um especialista da área, como um psicologo ou psiquiatra.")
+     if media_fisica < 3:
+          print("\nNotamos que suas respostas relacionadas à saúde física estão um pouco baixas. \nRecomendamos que procure um especialista da área, como um clínico geral.")
 
 
 
