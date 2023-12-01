@@ -4,6 +4,9 @@ def menu(): #Lari Aráujo
     """Função principal de menu que irá chamar as outras funções do código, variaveis para armazenar funções"""
     while True:
       print("\nOlá, Bem vindo ao FelizIdade!")
+      prox = input("Digite: \n1 - Para encerrar \n2 - Continuar")
+      if prox == "1":
+        encerrar()
       dados = função_cadastro()
       print(f"Os dados de seu cadastro são: {dados}")
       perguntas_iniciais(dados["cpf"])

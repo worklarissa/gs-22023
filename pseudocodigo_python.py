@@ -101,7 +101,7 @@ def avaliacao_saudefisica(cpf):#Luna
      else:
           return "Muito obrigada por preencher a avaliação de saúde física!"
 
-def mediadassaudes():#Lari Lopes     
+def mediadassaudes(cpf):#Lari Lopes     
      """Função armazena os conteúdos da avaliação da saúde mental e saúde fisica, calcula uma média entre os dois e printa
      o resultado com uma mensagem"""
      media_fisica = sum(lista_usuarios[cpf]["respostas_fisica"])/len(lista_usuarios[cpf]["respostas_fisica"])
@@ -110,12 +110,16 @@ def mediadassaudes():#Lari Lopes
 
 
 
-def recomendar_especialista():#Lari Lopes
+def recomendar_especialista(media_mental, media_fisica):#Lari Lopes
      """A Função recomenda um especialista a partir do resultado das avaliações de saúde mental e física (separadas), """
      if media_mental < 3:
           print("\nNotamos que suas respostas relacionadas à saúde mental estão um pouco baixas. \nRecomendamos que procure um especialista da área, como um psicologo ou psiquiatra.")
      if media_fisica < 3:
           print("\nNotamos que suas respostas relacionadas à saúde física estão um pouco baixas. \nRecomendamos que procure um especialista da área, como um clínico geral.")
+
+def encerrar():
+  print("O FelizIdade agradece!")
+  sys.exit(0)
 
 
 
