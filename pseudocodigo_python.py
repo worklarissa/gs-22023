@@ -43,8 +43,8 @@ def perguntas_iniciais(cpf):#Lari Araújo
      if per2 <= 3:
           avaliacao_saudefisica(cpf)
 
-     lista_usuarios[cpf]["respostas_mental"].append([per1])
-     lista_usuarios[cpf]["respostas_fisica"].append([per2])
+     lista_usuarios[cpf]["respostas_mental"].append(per1)
+     lista_usuarios[cpf]["respostas_fisica"].append(per2)
      print(lista_usuarios)
 
 
@@ -101,11 +101,11 @@ def avaliacao_saudefisica(cpf):#Luna
      else:
           return "Muito obrigada por preencher a avaliação de saúde física!"
 
-def mediadassaudes(cpf):#Lari Lopes
+def mediadassaudes():#Lari Lopes     
     """Função armazena os conteúdos da avaliação da saúde mental e saúde fisica, calcula uma média entre os dois e printa
      o resultado com uma mensagem"""
-
     pass
+
 
 def recomendar_especialista():#Lari Lopes
     """A Função recomenda um especialista a partir do resultado das avaliações de saúde mental e física (separadas), """
